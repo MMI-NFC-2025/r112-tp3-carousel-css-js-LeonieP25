@@ -5,6 +5,19 @@ img {
   height: auto;
 }
 
+/* Utilitaire accessibilité pour masquer visuellement tout en gardant accessible aux technologies d'assistance */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Mise en forme du carousel en CSS.
 Utiliser flex pour positionner les item du carousel les uns à coté des autres.
 La propriété "overflow-x" avec la valeur "scroll" permet rogner le contenu afin de tenir horizontalement dans la boîte de remplissage et d'ajouter un scroll horizontal si le contenu déborde.
@@ -58,6 +71,8 @@ Les margin négatifs à gauche et à droite corresponde à l'espace entre le nav
   gap: 16px;
   /* Ajoute un défilement horizontal si le contenu déborde - https://developer.mozilla.org/fr/docs/Web/CSS/overflow-x */
   overflow-x: scroll;
+  /* Permet un défilement doux lors de l'utilisation de scrollBy - https://developer.mozilla.org/fr/docs/Web/CSS/scroll-behavior */
+  scroll-behavior: smooth;
   /* Marge négative à gauche pour coller le carousel au bord de l'écran -24px - https://developer.mozilla.org/fr/docs/Web/CSS/margin */
   margin-left: -24px;
   /* Marge négative à droite pour coller le carousel au bord de l'écran -24px - https://developer.mozilla.org/fr/docs/Web/CSS/margin */

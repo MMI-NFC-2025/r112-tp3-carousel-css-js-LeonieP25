@@ -15,7 +15,13 @@ Compléter le fichier [menu.css](/src/css/components/carousel.css) et visualiser
 
 # Manuellement sans JS
 
-Simplement faire défiler horizontalement les images...
+Il est déjà possible de faire défiler horizontalement les images sans JavaScript :
+
+- Le conteneur `.carousel__container` possède `overflow-x: scroll;` en CSS.
+- Vous pouvez utiliser la molette (Shift + molette sur certains navigateurs), le trackpad ou toucher/glisser sur mobile.
+- Au clavier : cliquez dans la zone du carrousel puis utilisez les touches `PageDown`, `PageUp`, `Fin`, `Début` ou la barre d'espace (selon navigateur) pour naviguer.
+
+Astuce optionnelle (non ajoutée pour garder le code original) : on pourrait ajouter `tabindex="0"` sur le conteneur pour permettre le focus clavier explicite.
 
 # Faire défiler par code JS
 
