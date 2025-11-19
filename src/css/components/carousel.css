@@ -82,10 +82,17 @@ Les margin négatifs à gauche et à droite corresponde à l'espace entre le nav
 }
 
 .carousel__item {
-  /* L'élément prend 1 part de l'espace disponible, ne rétrécit pas, et a une largeur de base de 260px - https://developer.mozilla.org/fr/docs/Web/CSS/flex */
-  flex: 0 0 260px;
+  /* Largeur responsive: min 180px, préférée 40vw, max 320px */
+  flex: 0 0 clamp(180px, 40vw, 320px);
   /* Aligne l'élément au centre lors du défilement - https://developer.mozilla.org/fr/docs/Web/CSS/scroll-snap-align */
   scroll-snap-align: center;
+}
+
+/* Ajuste pour écrans très larges: taille un peu plus grande */
+@media (min-width: 1200px) {
+  .carousel__item {
+    flex: 0 0 clamp(220px, 28vw, 360px);
+  }
 }
 
 .carousel__item img {
