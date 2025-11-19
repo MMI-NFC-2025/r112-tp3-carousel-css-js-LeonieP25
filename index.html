@@ -15,20 +15,30 @@
     <h2 id="carousel-heading" class="carousel__heading sr-only">
       Carousel d'images musicales
     </h2>
+    <!-- Navigation par ancres vers les items -->
+    <nav class="carousel__anchors" aria-label="Navigation des éléments du carrousel">
+      <ul>
+        <li><a href="#item-1">1</a></li>
+        <li><a href="#item-2">2</a></li>
+        <li><a href="#item-3">3</a></li>
+        <li><a href="#item-4">4</a></li>
+        <li><a href="#item-5">5</a></li>
+      </ul>
+    </nav>
     <div class="carousel__container" role="region" aria-live="polite">
-      <div class="carousel__item">
+      <div class="carousel__item" id="item-1">
         <img src="/assets/img/agenda-01.avif" alt="Image musique 1" />
       </div>
-      <div class="carousel__item">
+      <div class="carousel__item" id="item-2">
         <img src="/assets/img/agenda-02.avif" alt="Image musique 2" />
       </div>
-      <div class="carousel__item">
+      <div class="carousel__item" id="item-3">
         <img src="/assets/img/agenda-03.avif" alt="Image musique 3" />
       </div>
-      <div class="carousel__item">
+      <div class="carousel__item" id="item-4">
         <img src="/assets/img/agenda-04.avif" alt="Image musique 4" />
       </div>
-      <div class="carousel__item">
+      <div class="carousel__item" id="item-5">
         <img src="/assets/img/agenda-05.avif" alt="Image musique 5" />
       </div>
     </div>
