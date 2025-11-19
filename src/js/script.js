@@ -1,20 +1,23 @@
-// *** CAROUSEL - Défilement basique précédent / suivant ***
+// *** CAROUSEL - Défilement dynamique basé sur la largeur d'un item ***
 // Sélection des éléments
 const carousel = document.querySelector('.carousel__container');
 const prevButton = document.querySelector('.carousel__button--prev');
 const nextButton = document.querySelector('.carousel__button--next');
+const premierItem = document.querySelector('.carousel__item');
 
-// Largeur fixe de défilement (sera rendue dynamique ensuite)
-const SCROLL_AMOUNT = 260;
+// Détermine la largeur d'un item (fallback 260 si non trouvé)
+let scrollAmount = premierItem ? premierItem.clientWidth : 260;
+
+// Recalcule sur redimensionnement (utile si items responsives plus tard)
+window.addEventListener('resize', () => {
+	scrollAmount = premierItem ? premierItem.clientWidth : scrollAmount;
+});
 
 if (carousel && prevButton && nextButton) {
-	// Scroll au clic sur le bouton précédent (vers la gauche)
 	prevButton.addEventListener('click', () => {
-		carousel.scrollBy({ left: -SCROLL_AMOUNT, behavior: 'smooth' });
+		carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
 	});
-
-	// Scroll au clic sur le bouton suivant (vers la droite)
 	nextButton.addEventListener('click', () => {
-		carousel.scrollBy({ left: SCROLL_AMOUNT, behavior: 'smooth' });
+		carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
 	});
 }
